@@ -1,11 +1,26 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import HeroSlider from '../components/HeroSlider.astro';
+import AboutIntro from '../components/AboutIntro.astro';
+import StatsGrid from '../components/StatsGrid.astro';
+import NewsSection from '../components/NewsSection.astro';
+import Benefits from '../components/Benefits.astro';
+import ServiceHighlight from '../components/ServiceHighlight.astro';
+import ServiceCarousel from '../components/ServiceCarousel.astro';
+import ProductCarousel from '../components/ProductCarousel.astro';
+import VideoSection from '../components/VideoSection.astro';
+import FlipBoxGrid from '../components/FlipBoxGrid.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Solar Nusantara - Energi Baru Indonesia">
+	<HeroSlider />
+	<AboutIntro />
+	<StatsGrid />
+	<NewsSection />
+	<Benefits />
+	<ServiceHighlight />
+	<ServiceCarousel />
+	<ProductCarousel />
+	<VideoSection />
+	<FlipBoxGrid />
 </Layout>
