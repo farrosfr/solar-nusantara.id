@@ -79,6 +79,7 @@ The reusable components are located in `src/components`:
 - `NewsItem.astro`: A single news item card.
 - `NewsSection.astro`: A section displaying a list of news items.
 - `ProductCarousel.astro`: A carousel to display products.
+- `SearchBar.astro`: A reusable search input component.
 - `ServiceCarousel.astro`: A carousel to display services.
 - `ServiceHighlight.astro`: A section to highlight specific services with stats.
 - `StatItem.astro`: A single stat item used in `ServiceHighlight`.
