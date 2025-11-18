@@ -1,51 +1,71 @@
 ---
 // src/components/Benefits.astro
+
+const checkIcon = `<svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`;
+
+const mainBenefits = [
+  {
+    icon: `<svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011-1v-1z" clip-rule="evenodd"></path></svg>`,
+    title: "Membantu Lingkungan",
+    description: "Solar Nusantara membantu lingkungan dengan mempromosikan penggunaan sumber energi bersih dan berkelanjutan, mengurangi dampak negatif dari bahan bakar fosil, serta berkontribusi pada masa depan yang lebih berkelanjutan."
+  },
+  {
+    icon: `<svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>`,
+    title: "Lebih Menghemat Uang Anda",
+    description: "Solar Nusantara menawarkan produk dan layanan energi terbarukan yang hemat biaya, serta membantu konsumen memanfaatkan tren menuju sumber energi yang lebih terjangkau dan berkelanjutan."
+  }
+];
+
+const otherBenefits = [
+  { title: "Ketahanan Lingkungan", icon: checkIcon },
+  { title: "Efektivitas Biaya", icon: checkIcon },
+  { title: "Kenyamanan", icon: checkIcon },
+  { title: "Keandalan", icon: checkIcon },
+  { title: "Independensi Energi", icon: checkIcon },
+  { title: "Dampak Positif", icon: checkIcon }
+];
 ---
 
-<section class="bg-white dark:bg-gray-900">
-  <div class="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-    <div class="max-w-screen-md mb-8 lg:mb-16">
-      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Mari kita bicarakan tentang manfaatnya.</h2>
-      <p class="text-gray-500 sm:text-xl dark:text-gray-400">Solar Nusantara memberikan berbagai manfaat, mulai dari penghematan biaya hingga kontribusi positif bagi lingkungan.</p>
+<section class="bg-gray-900">
+  <div class="py-16 px-4 mx-auto max-w-screen-xl">
+    <div class="max-w-screen-md mb-16">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">Mari kita bicarakan tentang manfaatnya.</h2>
+      <p class="text-gray-400 sm:text-xl">Solar Nusantara memberikan berbagai manfaat, mulai dari penghematan biaya hingga kontribusi positif bagi lingkungan.</p>
     </div>
-    <div class="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H4a1 1 0 01-1-1v-3a1 1 0 011-1h1a2 2 0 100-4H4a1 1 0 01-1-1V7a1 1 0 011-1h3a1 1 0 011-1v-1z" clip-rule="evenodd"></path></svg>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+      <!-- Column 1 -->
+      <div class="flex flex-col gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+          <Fragment set:html={mainBenefits[0].icon} />
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Membantu Lingkungan</h3>
-        <p class="text-gray-500 dark:text-gray-400">Solar Nusantara membantu lingkungan dengan mempromosikan penggunaan sumber energi bersih dan berkelanjutan, mengurangi dampak negatif dari bahan bakar fosil, serta berkontribusi pada masa depan yang lebih berkelanjutan.</p>
+        <div>
+          <h3 class="mb-2 text-xl font-bold text-white">{mainBenefits[0].title}</h3>
+          <p class="text-gray-400">{mainBenefits[0].description}</p>
+        </div>
       </div>
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+      
+      <!-- Column 2 -->
+      <div class="flex flex-col gap-4">
+        <div class="flex-shrink-0 w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center">
+          <Fragment set:html={mainBenefits[1].icon} />
         </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Lebih Menghemat Uang Anda</h3>
-        <p class="text-gray-500 dark:text-gray-400">Solar Nusantara menawarkan produk dan layanan energi terbarukan yang hemat biaya, serta membantu konsumen memanfaatkan tren menuju sumber energi yang lebih terjangkau dan berkelanjutan.</p>
+        <div>
+          <h3 class="mb-2 text-xl font-bold text-white">{mainBenefits[1].title}</h3>
+          <p class="text-gray-400">{mainBenefits[1].description}</p>
+        </div>
       </div>
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Ketahanan Lingkungan</h3>
-      </div>
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Efektivitas Biaya</h3>
-      </div>
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Kenyamanan</h3>
-      </div>
-      <div>
-        <div class="flex justify-center items-center mb-4 w-10 h-10 rounded-full bg-primary-100 lg:h-12 lg:w-12 dark:bg-primary-900">
-            <svg class="w-5 h-5 text-primary-600 lg:w-6 lg:h-6 dark:text-primary-300" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"></path></svg>
-        </div>
-        <h3 class="mb-2 text-xl font-bold dark:text-white">Keandalan</h3>
+      
+      <!-- Column 3 -->
+      <div class="flex flex-col gap-y-5">
+        {otherBenefits.map(benefit => (
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
+              <Fragment set:html={benefit.icon} />
+            </div>
+            <h3 class="text-lg font-bold text-white">{benefit.title}</h3>
+          </div>
+        ))}
       </div>
     </div>
   </div>
