@@ -2,26 +2,115 @@
 // src/components/Navbar.astro
 
 // Updated navLinks with nested children for "Tentang"
-const navLinks = [
+interface NavLink {
+  href: string;
+  text: string;
+  children?: NavLink[];
+}
+
+const navLinks: NavLink[] = [
   { href: "/", text: "Beranda" },
   { 
     href: "/tentang", 
     text: "Tentang",
     children: [
-      { 
-        href: "/tentang/profil", 
-        text: "Profil Perusahaan",
+      { href: "/tentang/tentang-solar-nusantara", text: "Tentang Solar Nusantara" },
+      { href: "/tentang/kebijakan-k3l-dan-sosial", text: "Kebijakan K3L dan Sosial" },
+      { href: "/tentang/kebijakan-larangan-obat-dan-alkohol", text: "Kebijakan Larangan Penggunaan Obat-obatan Terlarang dan Alkohol" },
+      { href: "/tentang/kebijakan-pencegahan-terjatuh", text: "Kebijakan Pencegahan Terjatuh" },
+      {
+        href: "/tentang/tentang-sonushub",
+        text: "Tentang SonusHUB",
         children: [
-          { href: "/tentang/profil/sejarah", text: "Sejarah" },
-          { href: "/tentang/profil/penghargaan", text: "Penghargaan" },
+          { href: "/tentang/sonushub/visi-dan-misi", text: "Visi dan Misi" },
+          { href: "/tentang/sonushub/nilai-sonusian", text: "Nilai Sonusian" },
+          { href: "/tentang/sonushub/tim-kita", text: "Tim Kita" },
         ]
       },
-      { href: "/tentang/visi-misi", text: "Visi & Misi" },
-      { href: "/tentang/manajemen", text: "Manajemen" },
+      {
+        href: "/tentang/berkolaborasi-dengan",
+        text: "Berkolaborasi dengan",
+        children: [
+          { href: "/tentang/kolaborasi/mitra-suplier", text: "Mitra Suplier" },
+          { href: "/tentang/kolaborasi/mitra-bisnis", text: "Mitra Bisnis" },
+        ]
+      },
+      { href: "/tentang/karir", text: "Karir" },
     ]
   },
-  { href: "/layanan", text: "Layanan" },
-  { href: "/produk", text: "Produk" },
+  { 
+    href: "/layanan", 
+    text: "Layanan",
+    children: [
+        {
+            href: "/layanan/sistem-tenaga-surya-epc",
+            text: "Sistem Tenaga Surya EPC",
+            children: [
+                { href: "/layanan/epc/segmen-ci", text: "Segmen C & I" },
+                { href: "/layanan/epc/segmen-shs", text: "Segmen SHS" },
+                { href: "/layanan/epc/sistem-pjuts", text: "Sistem PJUTS" },
+            ]
+        },
+        {
+            href: "/layanan/manajemen-energi",
+            text: "Manajemen Energi",
+            children: [
+                { href: "/layanan/manajemen-energi/sistem-pemantauan-energi-ci", text: "Sistem Pemantauan Energi untuk C&I" },
+                { href: "/layanan/manajemen-energi/sistem-otomasi-bangunan", text: "Sistem Otomasi Bangunan" },
+                { href: "/layanan/manajemen-energi/sistem-manajemen-armada", text: "Sistem Manajemen Armada" },
+                { href: "/layanan/manajemen-energi/sistem-rumah-pintar", text: "Sistem Rumah Pintar" },
+                { href: "/layanan/manajemen-energi/carbon-capture-system", text: "Carbon Capture System" },
+            ]
+        }
+    ]
+  },
+  { 
+    href: "/produk", 
+    text: "Produk",
+    children: [
+        {
+            href: "/produk/sistem-panel-surya",
+            text: "Sistem Panel Surya",
+            children: [
+                {
+                    href: "/produk/sistem-panel-surya/panel-surya",
+                    text: "Panel Surya",
+                    children: [
+                        { href: "/produk/panel-surya/panel-impor", text: "Panel Impor" },
+                        { href: "/produk/panel-surya/panel-tkdn", text: "Panel TKDN" },
+                    ]
+                },
+                {
+                    href: "/produk/sistem-panel-surya/inverter",
+                    text: "Inverter",
+                    children: [
+                        { href: "/produk/inverter/on-grid", text: "Inverter On Grid" },
+                        { href: "/produk/inverter/off-grid", text: "Inverter Off Grid" },
+                    ]
+                },
+                { href: "/produk/sistem-panel-surya/sistem-pemasangan", text: "Sistem Pemasangan" },
+                { href: "/produk/sistem-panel-surya/sistem-pengkabelan", text: "Sistem Pengkabelan" },
+                { href: "/produk/sistem-panel-surya/sistem-baterai", text: "Sistem Baterai" },
+            ]
+        },
+        {
+            href: "/produk/ekosistem-ev",
+            text: "Ekosistem EV",
+            children: [
+                { href: "/produk/ekosistem-ev/spkl", text: "SPKL | Pengisian Daya Kendaraan Listrik" },
+            ]
+        },
+        {
+            href: "/produk/energi-biomassa",
+            text: "Energi Biomassa",
+            children: [
+                { href: "/produk/energi-biomassa/pelet-kayu", text: "Pelet Kayu" },
+                { href: "/produk/energi-biomassa/rdf-srf", text: "RDF SRF" },
+                { href: "/produk/energi-biomassa/seri-50100-fg", text: "Seri 50100 FG" },
+            ]
+        }
+    ]
+  },
   { href: "/pintar", text: "Pintar" },
   { href: "/kontak", text: "Kontak" },
   { href: "/berita", text: "Berita" },
@@ -69,14 +158,34 @@ const navLinks = [
                   {child.children && (
                     <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub:block">
                       {child.children.map(subChild => (
-                        <li>
+                        <li class="relative group/sub">
                           <a 
                             href={subChild.href} 
-                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            class="flex items-center justify-between w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
                             class:list={{'text-blue-600 bg-gray-100': Astro.url.pathname.startsWith(subChild.href)}}
                           >
-                            {subChild.text}
+                            <span>{subChild.text}</span>
+                            {subChild.children && (
+                              <svg class="w-3 h-3 fill-current transform -rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            )}
                           </a>
+
+                          {/* Third level sub-submenu */}
+                          {subChild.children && (
+                            <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub:block">
+                              {subChild.children.map(superSubChild => (
+                                <li>
+                                  <a 
+                                    href={superSubChild.href} 
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    class:list={{'text-blue-600 bg-gray-100': Astro.url.pathname.startsWith(superSubChild.href)}}
+                                  >
+                                    {superSubChild.text}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          )}
                         </li>
                       ))}
                     </ul>
