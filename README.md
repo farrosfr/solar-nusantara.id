@@ -24,7 +24,6 @@ Inside of your Astro project, you'll see the following folders and files:
 │   │   ├── FlipBoxGrid.astro
 │   │   ├── Footer.astro
 │   │   ├── Header.astro
-│   │   ├── HeaderTop.astro
 │   │   ├── HeroSection.astro
 │   │   ├── MobileHeader.astro
 │   │   ├── Navbar.astro
@@ -71,8 +70,7 @@ The reusable components are located in `src/components`:
 - `Copyright.astro`: Copyright notice for the footer.
 - `FlipBoxGrid.astro`: A grid of flip boxes with calls to action.
 - `Footer.astro`: The site-wide footer.
-- `Header.astro`: The site-wide header, including Navbar and MobileHeader.
-- `HeaderTop.astro`: The top bar of the header for desktop.
+- `Header.astro`: The site-wide header, now including the top bar for desktop, Navbar and MobileHeader.
 - `HeroSection.astro`: The main hero section for the homepage.
 - `MobileHeader.astro`: The header for mobile devices, including the hamburger menu.
 - `Navbar.astro`: The main navigation bar for desktop.
