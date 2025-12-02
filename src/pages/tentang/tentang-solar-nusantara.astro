@@ -1,0 +1,108 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const whyChooseUs = [
+  {
+    title: "Keahlian",
+    description: "SONUS memiliki tim profesional berpengalaman dengan keahlian khusus dalam instalasi Panel Surya, memastikan layanan berkualitas tinggi bagi pelanggan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" /></svg>`
+  },
+  {
+    title: "Keandalan",
+    description: "SONUS memiliki reputasi dalam menyediakan layanan yang andal dan tepercaya, memberikan kepercayaan dan ketenangan pikiran kepada pelanggan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>`
+  },
+  {
+    title: "Tanggung Jawab",
+    description: "SONUS berkomitmen pada praktik bisnis berkelanjutan yang bermanfaat bagi komunitas lokal dan lingkungan.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>`
+  },
+  {
+    title: "Inovatif",
+    description: "SONUS menawarkan solusi inovatif yang menjawab kebutuhan unik pelanggan dan dapat memberikan keunggulan di pasar.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707.707M12 21v-1m0-16a9 9 0 110 18 9 9 0 010-18z" /></svg>`
+  },
+  {
+    title: "Kemitraan Lokal",
+    description: "SONUS bermitra dengan perusahaan lokal, menciptakan dampak positif pada komunitas sekaligus berkontribusi pada pengembangan ekonomi.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>`
+  },
+  {
+    title: "Komitmen",
+    description: "SONUS memberikan pelatihan EPC Panel Surya, memberdayakan pelanggan dengan pengetahuan untuk memaksimalkan investasi mereka.",
+    icon: `<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20" /></svg>`
+  }
+];
+
+const partners = [
+  { name: "Growatt", logo: "https://solar-nusantara.id/wp-content/uploads/2023/02/Growatt.png" },
+  { name: "Sungrow", logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Sungrow_Power_Supply.svg/1552px-Sungrow_Power_Supply.svg.png" },
+  { name: "Jinko Solar", logo: "https://static.cdnlogo.com/logos/j/29/jinko-solar.svg" },
+  { name: "Huawei Solar", logo: "https://upload.wikimedia.org/wikipedia/commons/4/41/Huawei_Standard_logo.svg" },
+];
+---
+
+<Layout title="Tentang Solar Nusantara">
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-blue-50 py-20">
+      <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        <div class="text-left">
+          <span class="text-blue-600 font-semibold uppercase">Tentang Kami</span>
+          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mt-2 mb-4">
+            Masa Depan Energi Indonesia
+          </h1>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Tripower Solar Nusantara (SONUS) adalah perusahaan rintisan yang bergerak di bidang instalasi energi, khususnya Engineering, Procurement, and Construction (EPC) Panel Surya (PLTS). Kami percaya ini adalah bisnis yang sangat menjanjikan di Indonesia saat ini.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            Selain itu, kami menggagas "PROGRAM INDONESIA TERANG" yang bertujuan menyediakan energi baru terbarukan (EBT) ke daerah-daerah terpencil, berkolaborasi dengan BUMDES dan wirausahawan lokal melalui pelatihan EPC Panel Surya.
+          </p>
+        </div>
+        <div>
+          <img 
+            src="https://solar-nusantara.id/wp-content/uploads/elementor/thumbs/About-Us-2-qlh2rb4r4xm082rb9zyobaivy7j5j51xhywj0nu79c.webp" 
+            alt="Tim Solar Nusantara sedang bekerja di lapangan" 
+            class="rounded-lg shadow-2xl w-full h-auto object-cover"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mengapa Memilih SONUS?</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+          Bergabunglah dengan kami dalam membangun masa depan yang lebih cerah dengan solusi energi berkelanjutan dari SONUS.
+        </p>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          {whyChooseUs.map(item => (
+            <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div class="text-blue-600 mb-4" set:html={item.icon} />
+              <h3 class="text-xl font-bold text-gray-800 mb-2">{item.title}</h3>
+              <p class="text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="bg-gray-50 py-20">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Mitra Kami</h2>
+        <p class="text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+          Kami bekerja sama dengan para pemimpin industri untuk memberikan solusi terbaik.
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+          {partners.map(partner => (
+            <div class="opacity-60 hover:opacity-100 transition-opacity duration-300">
+              <img src={partner.logo} alt={partner.name} class="h-16" />
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
