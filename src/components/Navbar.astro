@@ -43,7 +43,7 @@ import { navLinks, type NavLink } from '../data/navLinks';
                   {child.children && (
                     <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub:block">
                       {child.children.map(subChild => (
-                        <li class="relative group/sub">
+                        <li class="relative group/sub2">
                           <a 
                             href={subChild.href || '#'} 
                             class="flex items-center justify-between w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
@@ -57,16 +57,36 @@ import { navLinks, type NavLink } from '../data/navLinks';
 
                           {/* Third level sub-submenu */}
                           {subChild.children && (
-                            <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub:block">
+                            <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub2:block">
                               {subChild.children.map(superSubChild => (
-                                <li>
+                                <li class="relative group/sub3">
                                   <a 
                                     href={superSubChild.href || '#'} 
-                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    class="flex items-center justify-between w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-gray-100"
                                     class:list={{'text-blue-600 bg-gray-100': superSubChild.href && Astro.url.pathname.startsWith(superSubChild.href)}}
                                   >
-                                    {superSubChild.text}
+                                    <span>{superSubChild.text}</span>
+                                    {superSubChild.children && (
+                                      <svg class="w-3 h-3 fill-current transform -rotate-90" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                                    )}
                                   </a>
+
+                                  {/* Fourth level sub-submenu */}
+                                  {superSubChild.children && (
+                                    <ul class="absolute top-0 left-full w-56 bg-white shadow-lg rounded-md hidden group-hover/sub3:block">
+                                      {superSubChild.children.map(megaSubChild => (
+                                        <li>
+                                          <a 
+                                            href={megaSubChild.href || '#'} 
+                                            class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                            class:list={{'text-blue-600 bg-gray-100': megaSubChild.href && Astro.url.pathname.startsWith(megaSubChild.href)}}
+                                          >
+                                            {megaSubChild.text}
+                                          </a>
+                                        </li>
+                                      ))}
+                                    </ul>
+                                  )}
                                 </li>
                               ))}
                             </ul>

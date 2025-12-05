@@ -75,16 +75,16 @@ export const navLinks: NavLink[] = [
                     href: "/produk/sistem-panel-surya/panel-surya",
                     text: "Panel Surya",
                     children: [
-                        { href: "/produk/panel-surya/panel-impor", text: "Panel Impor" },
-                        { href: "/produk/panel-surya/panel-tkdn", text: "Panel TKDN" },
+                        { href: "/produk/sistem-panel-surya/panel-surya/panel-impor", text: "Panel Impor" },
+                        { href: "/produk/sistem-panel-surya/panel-surya/panel-tkdn", text: "Panel TKDN" },
                     ]
                 },
                 {
                     href: "/produk/sistem-panel-surya/inverter",
                     text: "Inverter",
                     children: [
-                        { href: "/produk/inverter/on-grid", text: "Inverter On Grid" },
-                        { href: "/produk/inverter/off-grid", text: "Inverter Off Grid" },
+                        { href: "/produk/sistem-panel-surya/inverter/on-grid", text: "Inverter On Grid" },
+                        { href: "/produk/sistem-panel-surya/inverter/off-grid", text: "Inverter Off Grid" },
                     ]
                 },
                 { href: "/produk/sistem-panel-surya/sistem-pemasangan", text: "Sistem Pemasangan" },

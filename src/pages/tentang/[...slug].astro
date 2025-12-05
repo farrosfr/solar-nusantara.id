@@ -1,0 +1,65 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import IntroPageMenu from '../../components/IntroPageMenu.astro';
+import { navLinks, type NavLink } from '../../data/navLinks';
+
+export async function getStaticPaths() {
+  const tentangLink = navLinks.find(link => link.href === '/tentang');
+  const paths: { params: { slug: string | undefined } }[] = [];
+
+  // Recursive function to extract all paths
+  function extractPaths(links: NavLink[]) {
+    for (const link of links) {
+      if (link.href) {
+        // The slug is the part of the path *after* /tentang/
+        // For the main /tentang page, the slug will be undefined
+        const slug = link.href.startsWith('/tentang/') ? link.href.substring('/tentang/'.length) : (link.href === '/tentang' ? undefined : null);
+
+        if (slug !== null) {
+          paths.push({ params: { slug } });
+        }
+      }
+      if (link.children) {
+        extractPaths(link.children);
+      }
+    }
+  }
+
+  // Start extraction from the children of the main "Tentang" link, and include the "Tentang" link itself
+  if (tentangLink) {
+    extractPaths([tentangLink]);
+  }
+
+  return paths;
+}
+
+// Get the slug from the URL
+const { slug } = Astro.params;
+const currentPath = `/tentang${slug ? `/${slug}` : ''}`;
+
+// Recursive function to find the link by href in the nested navLinks structure
+function findLinkByHref(links: NavLink[], href: string): NavLink | undefined {
+  for (const link of links) {
+    if (link.href === href) {
+      return link;
+    }
+    if (link.children) {
+      const found = findLinkByHref(link.children, href);
+      if (found) {
+        return found;
+      }
+    }
+  }
+  return undefined;
+}
+
+// Find the data for the current page
+const pageData = findLinkByHref(navLinks, currentPath);
+
+const title = pageData?.text || 'Halaman Tentang';
+const menuItems = pageData?.children;
+---
+
+<Layout title={title}>
+  <IntroPageMenu title={title} items={menuItems} />
+</Layout>
