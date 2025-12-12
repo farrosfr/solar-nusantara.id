@@ -108,16 +108,20 @@ A full list of routes generated from `navLinks.ts`:
     - `/produk/ekosistem-ev/spkl`
   - `/produk/energi-biomassa`
     - `/produk/energi-biomassa/pelet-kayu`
-    - `/produk/energi-biomassa/rdf-srf`
-    - `/produk/energi-biomassa/seri-50100-fg`
+    - `/produk/energi-biomassa/rdf`
+    - `/produk/energi-biomassa/srf`
+  - `/produk/seri-50100-fg`
 - `/pintar`
-- `/kontak`
 - `/berita`
+- `/kontak`
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Astro**: The web framework for building fast, content-focused websites.
-- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
-- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+<p align="left">
+  <a href="https://astro.build/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/astro-%232C2052.svg?style=for-the-badge&logo=astro&logoColor=white" alt="Astro"></a>
+  <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="Tailwind CSS"></a>
+  <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+  <a href="https://www.npmjs.com/" target="_blank" rel="noreferrer"><img src="https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white" alt="NPM"></a>
+</p>
 
-If you want to check, visit astro.solar-nusantara.id
+If you want to check, visit solar-nusantara.id
