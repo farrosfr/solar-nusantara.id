@@ -44,7 +44,7 @@ Solar PV global capacity and annual aditions, 2016-2016 – by REN21, 2017, Rene
 
 ### Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ### Desainer
 

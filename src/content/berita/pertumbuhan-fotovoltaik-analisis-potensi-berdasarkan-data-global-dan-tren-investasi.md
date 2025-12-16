@@ -38,7 +38,7 @@ Additional graphs created by Abby Webster
 
 ### Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ### Desainer
 

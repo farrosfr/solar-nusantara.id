@@ -34,7 +34,7 @@ Abrams, Neal. “Applications of PV.” Solar Energy Basics. Coursera. <https://
 
 ### Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ### esainer
 

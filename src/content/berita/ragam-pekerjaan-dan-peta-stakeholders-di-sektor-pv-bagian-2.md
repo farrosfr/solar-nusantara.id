@@ -72,7 +72,7 @@ Abrams, Neal. “Jobs and stakeholders in PV.” Solar Energy Basics. Coursera. 
 
 ### Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ### Desainer
 

@@ -54,7 +54,7 @@ ementerian Energi dan Sumber Daya Mineral (ESDM). (2023). Laporan Tahunan Energi
 
 ## Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ## Desainer
 

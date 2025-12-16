@@ -42,7 +42,7 @@ Vanguard 1 – by NASA [public domain], via Wikimedia Commons
 
 ### Penulis
 
-Mochammad Farros Fatchur Roji
+[Mochammad Farros Fatchur Roji](farrosfr.com)
 
 ### Desainer
 
