@@ -58,6 +58,12 @@ const hasHeadings = headings && headings.length > 0;
           {hasHeadings ? (
             // With Table of Contents
             <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+              <div class="flex-1 w-full lg:w-3/4">
+                <article class="prose lg:prose-xl mx-auto">
+                  <h1>{title}</h1>
+                  <slot />
+                </article>
+              </div>
               <aside class="hidden lg:block lg:w-1/4 lg:sticky lg:top-24 self-start">
                 <nav id="toc-nav" class="border-l-2 border-gray-200 pl-4">
                   <h2 class="font-bold text-lg mb-4 text-gray-800">Di Halaman ini</h2>
@@ -72,12 +78,6 @@ const hasHeadings = headings && headings.length > 0;
                   </ul>
                 </nav>
               </aside>
-              <div class="flex-1 w-full lg:w-3/4">
-                <article class="prose lg:prose-xl mx-auto">
-                  <h1>{title}</h1>
-                  <slot />
-                </article>
-              </div>
             </div>
           ) : (
             // Without Table of Contents
