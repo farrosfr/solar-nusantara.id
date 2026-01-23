@@ -22,7 +22,7 @@ interface Props {
   ogImage?: string; // New prop for Astro pages
 }
 
-const { headings, frontmatter, title: directTitle } = Astro.props;
+const { headings, frontmatter, title: directTitle, ogImage } = Astro.props;
 
 // This is the key change: Detect if the page is from Markdown based on `frontmatter`
 const isMarkdownPage = !!frontmatter;
@@ -32,7 +32,7 @@ const title = isMarkdownPage ? frontmatter.title : directTitle || 'Solar Nusanta
 const description = frontmatter?.description || 'Menggerakkan masa depan Indonesia dengan energi bersih dan berkelanjutan. Solar Nusantara menyediakan solusi energi surya terdepan untuk perumahan, komersial, dan industri.';
 
 // Determine Open Graph image
-const imageSrc = frontmatter?.heroImage?.src || '/og-fallback.png';
+const imageSrc = ogImage || frontmatter?.heroImage?.src || '/og-fallback.png';
 const ogImageUrl = new URL(imageSrc, Astro.url).href;
 
 const hasHeadings = headings && headings.length > 0;
