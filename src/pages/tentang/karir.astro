@@ -1,0 +1,86 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+const internships = [
+  { title: "Engineering" },
+  { title: "PMO" },
+  { title: "Technical Support" },
+  { title: "Product Fulfillment Monitoring Officer" },
+  { title: "AI Prompt Engineer" },
+];
+
+const permanentStaff = [
+  { title: "AI Prompt Engineer", type: "Permanent Staff" },
+  { title: "Business Partnership Officer", type: "Permanent Staff" },
+  { title: "Business Strategic Officer", type: "Permanent Staff" },
+];
+---
+
+<Layout title="Karir - Solar Nusantara">
+  <div class="bg-gray-50">
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-20 text-center">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
+        Berkarier Bersama <span class="text-blue-600">SonusID</span>
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+        Jadilah bagian dari revolusi energi bersih di Indonesia. Kami mencari talenta-talenta penuh semangat yang siap berinovasi, berkolaborasi, dan memberikan dampak positif untuk masa depan yang berkelanjutan.
+      </p>
+    </section>
+
+    <!-- Job Listings Section -->
+    <section class="container mx-auto px-6 py-16">
+      <div class="max-w-5xl mx-auto">
+        
+        <!-- Internship Program -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-blue-500 pl-4">
+            Program Magang
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {internships.map(job => (
+              <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-900">{job.title}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Permanent Staff -->
+        <div class="mt-16">
+          <h2 class="text-3xl font-bold text-gray-800 mb-8 border-l-4 border-blue-500 pl-4">
+            Staf Permanen
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {permanentStaff.map(job => (
+              <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <h3 class="text-xl font-semibold text-gray-900">{job.title}</h3>
+                <span class="text-sm font-medium text-blue-600 bg-blue-100 py-1 px-3 rounded-full mt-2 inline-block">{job.type}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-white py-20">
+      <div class="container mx-auto px-6 text-center max-w-4xl">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Tertarik Bergabung?
+        </h2>
+        <p class="text-gray-600 text-lg mb-8">
+          Jika Anda memiliki semangat untuk energi terbarukan dan ingin membuat perbedaan, kami ingin mendengar dari Anda. Mohon isi formulir dan kirimkan CV Anda ke link Form berikut.
+        </p>
+        <a href="https://rekrutmen.solar-nusantara.id" class="inline-block bg-blue-600 text-white font-bold text-lg py-4 px-10 rounded-lg hover:bg-blue-700 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300">
+          Lamar Sekarang
+        </a>
+		<p class="text-gray-500 text-base mt-4">
+			atau hubungi kami via WhatsApp di <a href="http://wa.me/+6282170000575" class="text-blue-600 hover:underline" target="_blank">+62 821-7000-0575</a>
+		  </p>
+      </div>
+    </section>
+
+  </div>
+</Layout>
