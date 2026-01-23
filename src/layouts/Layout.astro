@@ -19,6 +19,7 @@ interface Props {
     heroImage?: any;
   };
   title?: string;
+  ogImage?: string; // New prop for Astro pages
 }
 
 const { headings, frontmatter, title: directTitle } = Astro.props;
